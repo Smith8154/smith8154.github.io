@@ -1,6 +1,6 @@
 ---
 title: Setting up Rayhunter
-description: Learnings after installing Rayhunter.
+description: Learnings and helpful tips I would like to share after installing Rayhunter.
 author: Smith8154
 date: 2026-02-03 23:00:00
 categories: [Personal]
