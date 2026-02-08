@@ -4,15 +4,15 @@ description: Learnings after installing Rayhunter.
 author: Will Smith
 date: 2026-02-03 23:00:00
 categories: [Personal]
-tags: [Rayhunter, Cellular]
-pin: true
-math: true
+tags: [Rayhunter, Cellular, Gadgets]
+pin: false
+math: false
 mermaid: true
 ---
 
 ## What is Rayhunter?
 
-I won't go into too much detail here as I'm probably not the most qualified person to give a lecture on this. Simply put, Rayhunter is [**software developed by the EFF**](https://www.eff.org/deeplinks/2025/03/meet-rayhunter-new-open-source-tool-eff-detect-cellular-spying) to try and detect the use of Stingry's or other IMSI catchers. These devices are used by law enforcement to track mobile device, often without a warrant (which is a 4th amendment violation). Not much is known about how these devices truly operate, which makes them difficult to detect. If you end up setting this up yourself and your device alerts you to potential activity, make sure and [**submit it to the EFF for analysis**](https://efforg.github.io/rayhunter/faq.html#help-rayhunters-line-is-redorangeyellowdotteddashed-what-should-i-do).
+I won't go into too much detail here as I'm probably not the most qualified person to give a lecture on this. Simply put, Rayhunter is [**software developed by the EFF**](https://www.eff.org/deeplinks/2025/03/meet-rayhunter-new-open-source-tool-eff-detect-cellular-spying) to try and detect the use of Stingry's or other IMSI catchers. These devices are used by law enforcement to track mobile device, often without a warrant. Not much is known about how these devices truly operate, which makes them difficult to detect. If you end up setting this up yourself and your device alerts you to potential activity, make sure and [**submit it to the EFF for analysis**](https://efforg.github.io/rayhunter/faq.html#help-rayhunters-line-is-redorangeyellowdotteddashed-what-should-i-do).
 
 Below are some excellent videos from some of my favorite creators covering the topic.
 {% include embed/youtube.html id='W_F4rEaRduk' %}
@@ -20,13 +20,15 @@ Below are some excellent videos from some of my favorite creators covering the t
 
 ## Purchasing a device
 
-I chose to purchase the Orbic RC400L since this is the device recommended by the EFF. I purchased my device off ebay for about \\$30 shipped. While you can purchase units with Rayhunter preinstalled, wheres the fun in that? I noticed that most of the units being sold with Rayhunter preinstalled were over \\$50. Installing Rayhunter is dead simple, so I really don't think it's worth purchasing these devices for such a massive upcharge when installing Rayhunter only takes about 5 minutes.
+I chose to purchase the Orbic RC400L since this is the device recommended by the EFF. I purchased my device off ebay for about \\$30 shipped. You can purchase units with Rayhunter preinstalled, but wheres the fun in that? I noticed that most of the units being sold with Rayhunter preinstalled were over \\$50. Installing Rayhunter is dead simple, so I really don't think it's worth purchasing these devices for such a massive upcharge when installing Rayhunter only takes about 5 minutes.
 
 Wherever you decide to purchase your device from, make sure it includes a SIM card as that is a requirement for Rayhunter to operate, even if you don't activate it. You can purchase a SIM card separately, but I think it makes sense to purchase it with the unit.
 
 ### Locked vs unlocked
 
 It appears that some Orbic devices are being sold with a carrier lock (usually locked to Verizon). It is very difficult to tell which devices are carrier locked without trying to put a different SIM card in it to see if it works. The good news is the carrier lock doesn't matter for Rayhunter operations. It would only matter if you actually wanted to activate the SIM to use data or if your device was sold without a SIM card and you want to use a SIM card from a different carrier that you may have already laying around.
+
+People on Github have had some luck getting Verizon to unlock their Orbic, but there are some notes from some people outside of the US having issues. If you are concerned about a carrier lock, I would recommend reading though [**this Github issue**](https://github.com/EFForg/rayhunter/issues/207_).
 
 ## Software versions
 
