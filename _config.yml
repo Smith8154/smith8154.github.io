@@ -16,7 +16,7 @@ timezone: America/New_York
 
 title: Smith8154's Blog # the main title
 
-tagline: Yet another tech blog # it will display as the subtitle
+tagline: Just another sysadmin # it will display as the subtitle
 
 description: >- # used by seo meta and the atom feed
   A tech related blog where I document fun and interesting things I have encountered.
