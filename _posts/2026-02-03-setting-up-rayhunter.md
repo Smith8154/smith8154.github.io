@@ -1,7 +1,7 @@
 ---
 title: Setting up Rayhunter
 description: Learnings after installing Rayhunter.
-author: Will Smith
+author: Smith8154
 date: 2026-02-03 23:00:00
 categories: [Personal]
 tags: [Rayhunter, Cellular, Gadgets]
@@ -20,7 +20,7 @@ Below are some excellent videos from some of my favorite creators covering the t
 
 ## Purchasing a device
 
-I chose to purchase the Orbic RC400L since this is the device recommended by the EFF. I purchased my device off ebay for about \\$30 shipped. You can purchase units with Rayhunter preinstalled, but wheres the fun in that? I noticed that most of the units being sold with Rayhunter preinstalled were over \\$50. Installing Rayhunter is dead simple, so I really don't think it's worth purchasing these devices for such a massive upcharge when installing Rayhunter only takes about 5 minutes.
+I chose to purchase the Orbic RC400L since this is the device recommended by the EFF. I purchased my device off ebay for about \$30 shipped. You can purchase units with Rayhunter preinstalled, but wheres the fun in that? I noticed that most of the units being sold with Rayhunter preinstalled were over \$50. Installing Rayhunter is dead simple, so I really don't think it's worth purchasing these devices for such a massive upcharge when installing Rayhunter only takes about 5 minutes.
 
 Wherever you decide to purchase your device from, make sure it includes a SIM card as that is a requirement for Rayhunter to operate, even if you don't activate it. You can purchase a SIM card separately, but I think it makes sense to purchase it with the unit.
 
