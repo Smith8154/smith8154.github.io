@@ -1,6 +1,6 @@
 ---
 title: Installing Tailscale on an Orbic RC400L
-description: How to install a Telnyx SIM and install Tailscale on an Orbic RC400L.
+description: How to activate a Telnyx SIM and install Tailscale on an Orbic RC400L.
 author: Smith8154
 date: 2026-02-25 23:00:00
 categories: [Personal]
