@@ -1,6 +1,6 @@
 ---
 title: Installing Tailscale on an Orbic RC400L
-description: How to set up Rayhunter with a Telnyx SIM to receive NTFY notifications.
+description: How to install a Telnyx SIM and install Tailscale on an Orbic RC400L.
 author: Smith8154
 date: 2026-02-25 23:00:00
 categories: [Personal]
@@ -19,16 +19,16 @@ Just about everything I am going to show you here has the potential to brick you
 
 ## Overview
 
-In my [**previous blog post**](https://blog.wsmith.io/posts/setting-up-rayhunter/), I shared some of my thoughts and findings when setting up Rayhunter. The one thing I wanted to do in the future was get NTFY notifications working by using a Telnyx IoT SIM for super cheap cellular connectivity. If you are willing to expose your NTFY server to the public internet, this isn't the guide for you. If you want to run Tailscale on the Orbic to connect back to your selfhosted NTFY server, you have come to the right place!
+In my [**previous blog post**](https://blog.wsmith.io/posts/setting-up-rayhunter/), I shared some of my thoughts and findings when setting up Rayhunter. The one thing I wanted to do in the future was get ntfy notifications working by using a Telnyx IoT SIM for super cheap cellular connectivity. If you are willing to expose your ntfy server to the public internet, this isn't the guide for you. If you want to run Tailscale on the Orbic to connect back to your selfhosted ntfy server, you have come to the right place!
 
-In this post, I will show you how to activate a Telnyx SIM, install Tailscale on the Orbic, and install NTFY on TrueNAS. Note that I am only interested in getting Tailscale working on the device itself. I am not trying to get the clients that connect to the Orbic to also route through Tailscale. If they do, great (but probably slow), if not, sorry.
+In this post, I will show you how to activate a Telnyx SIM, install Tailscale on the Orbic, and install ntfy on TrueNAS. Note that I am only interested in getting Tailscale working on the device itself. I am not trying to get the clients that connect to the Orbic to also route through Tailscale. If they do, great (but probably slow), if not, sorry.
 
 > You will need to make sure you flashed your device using `orbic-usb` as this requires a root shell. This also assumes that you have already installed ADB tools on your device.
 {: .prompt-info }
 
 ## Activating the Telnyx SIM
 
-Activating the SIM from Telnyx was a much bigger challenge than I was expecting. To the point where I thought I was going to have to give up on this dream altogether. But at the 11th hour, a beautiful person over on Github published their findings on how to [**swap the carrier**](https://gist.github.com/trevormjaymes/45ab8e596bf3a1ba858ef92e6b27909b#alternative-goahead-stock-web-api) on the Orbic. An absolutely huge thank you to Trevor for this find. This absolutely would not be possible without his amazing guide. I **highly** recommend that you go and read his full write up on this to understand more of what is going on. I'm not even going to pretend like I understand what is going on here. In short, the options in the Orbic webUI for manually setting the APN are just there for looks. They don't actually change the APN that the device is trying to connect to, so it will be stuck connecting to Verizon, no matter what SIM you insert.
+Activating the SIM from Telnyx was a much bigger challenge than I was expecting. To the point where I thought I was going to have to give up on this dream altogether. But at the 11th hour, a beautiful person over on Github published their findings on how to [**swap the carrier**](https://gist.github.com/trevormjaymes/45ab8e596bf3a1ba858ef92e6b27909b) on the Orbic. An absolutely huge thank you to Trevor for this find. This absolutely would not be possible without his amazing guide. I **highly** recommend that you go and read his full write up on this to understand more of what is going on. I'm not even going to pretend like I understand what is going on here. In short, the options in the Orbic webUI for manually setting the APN are just there for looks. They don't actually change the APN that the device is trying to connect to, so it will be stuck connecting to Verizon, no matter what SIM you insert.
 
 > Make sure you take a backup of all of the values from this section. If you do not, there may be no way to restore these settings. Trevor is currently working on a utility to back up and restore the full firmware on the device in case you brick it. I will link to that once it is posted.
 {: .prompt-danger }
@@ -168,7 +168,7 @@ We need to manually authenticate to Tailscale once so it saves the authenticatio
 
 First, we need to start `tailscaled`.
 ```shell
-/data/tailscale/tailscaled -no-logs-no-support -tun=userspace-networking -statedir=/data/tailscale/state
+/data/tailscale/tailscaled -no-logs-no-support -statedir=/data/tailscale/state
 ```
 
 Open a new terminal window and re-connect to the device from ADB.
@@ -181,7 +181,7 @@ adb shell
 /data/tailscale/tailscale down
 ```
 
-You can now close this second window, and you can quit `tailscaled` from the other ADB window. Reboot your device, and Tailscale should automatically launch and connect your device! Make sure to disable key expiry from the Tailscale portal as well so you don't have to re-authenticate in the future.
+You can now close this second window, and you can quit `tailscaled` from the other ADB window. Reboot your device, and Tailscale should automatically launch and connect! Make sure to disable key expiry from the Tailscale portal as well so you don't have to re-authenticate in the future.
 
 ## Setting up ntfy
 
@@ -204,5 +204,7 @@ You should now be able to access the Rayhunter UI via Tailscale by going to the 
 I thought this was going to be a very quick project, but this turned out to be a lot more complicated than I ever thought it would be. I had so much fun working on this, and I have learned a TON about Linux and embedded devices.
 
 I plan to tinker with this device a bit more. My Orbic is currently running with between 2-4mb of free RAM, so I would like to see if I could get some RAM back, but we'll see. I'm sure messing with system stuff will be a good way to brick my device. I'm also going to keep an eye on the amount of data that the Orbic is using since I'm paying per-MB. I've been averaging about 20mb of data per day, which isn't too bad, but that's about $1.50 a day, which is about $1.49 more than I am wanting to pay.
+
+I noticed one day that the device seemed to have crashed. I was able to reboot it and it started working again. I'm guessing there was a spike in RAM and a process was killed. I will continue to monitor for stability and make a new post with updates if I notice anything odd.
 
 If you see anything here that can be improved, please let me know by leaving a comment! If you have any questions, also leave a comment and I would be happy to help!
