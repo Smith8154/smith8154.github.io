@@ -32,7 +32,7 @@ Neither of these worked. Maybe they worked at one point in time, but they work n
 
 Installing USBNetLite is straightforward. Download the latest release release from the above GitHub page (in my case, I downloaded the one for `11thgenplus`), then copy the file to the `mrpackage` folder on your Kindle. Launch KUAL, and go to Helper, Install MR Packages, and wait for the install to finish. You may get a popup warning you that an application may not be able to launch. That's normal, just accept it and move on. After your Kindle restarts, you should have a new option in KUAL for USBNetLite.
 
-# Configuring SSH
+### Configuring SSH
 
 I will probably end up keeping ssh disabled, but while I'm here, I might as well copy over my public key and disable password authentication. I'm going to go ahead and tap `Toggle USBNetwork`, then tap `USBNetwork Status`. It should say `USBNetwork: enabled (usbnet, sshd up)`. Now, I will ssh using the default username (root) and default password (kindle) and copy my public key.
 
